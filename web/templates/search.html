@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Paper Search</title>
+    <link rel="stylesheet" href="{{ buildStaticUrl('/css/semantic.css') }}">
+</head>
+<body>
+
+
+<div class="ui container">
+    <div class="ui top fixed stackable inverted menu" style="height: 55px">
+        <div class="ui container">
+            <a href="{{ buildPath('/') }}" class="header item">
+                Paper Search
+                <span style="margin-right: 5px"></span>
+            </a>
+            <div class="ui container" style="width: 510px">
+                <form action="{{ buildUrlPath('index_page.search') }}" class="ui form items">
+                    <div class="item">
+                        <div class="ui icon input">
+                            {% if data.keyword != None %}
+                            <input type="text" name="search_word"
+                                   style="border-radius: 30px; width: 320px; height: 40px"
+                                   value="{{ data.keyword }}">
+                            {% else %}
+                            <input type="text" name="search_word"
+                                   style="border-radius: 30px; width: 320px; height: 40px" value="">
+                            {% endif %}
+                            <i class="circular search link icon" style="margin-top: 2px"></i>
+                        </div>
+                        <div class="item">
+                            <button type="submit" class="ui teal basic button"
+                                    style="border-radius: 30px; height: 40px">
+                                搜索
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="{{ buildUrlPath('user_page.login') }}" class="right item">
+                登陆
+                <span style="margin-right: 5px"></span>
+                <i class="user icon"></i>
+            </a>
+            <a href="{{ buildUrlPath('user_page.register') }}" class="item">
+                注册
+                <span style="margin-right: 5px"></span>
+                <i class="user plus icon"></i>
+            </a>
+            <a href="{{ buildPath('/user/info') }}" class="item">
+                <img src="{{ buildStaticUrl('/images/avatar.jpeg') }}" alt="" class="round_icon" title="">
+                <style>
+                    .round_icon {
+                        width: 32px;
+                        height: 32px;
+                        display: flex;
+                        border-radius: 50%;
+                        align-items: center;
+                        justify-content: center;
+                        overflow: hidden;
+                    }
+                </style>
+            </a>
+        </div>
+    </div>
+
+    <div class="ui container" style="margin-top: 100px">
+        {% include 'alert.html' %}
+    </div>
+
+    {% if data.results %}
+    {% for result_list in data.results %}
+    {% for result in result_list %}
+    {% for res in result %}
+    <div class="ui container stacked segment" style="width: 800px; margin-top: 60px">
+        <div class="ui divided items">
+            <div class="item">
+                <div class="content">
+                    <a class="header" href="{{ res.link }}">{{ res.title }}</a>
+                    <div class="description">
+                        {% if res.author|length %}
+                        <p style="color: #33CC66">
+                            <strong>作者：</strong>{{ res.author }}
+                        </p>
+                        {% endif %}
+                        <div style="height: 8px"></div>
+                        <p>
+                            &emsp;&emsp;{{ res.digest }}
+                        </p>
+                        <div style="height: 8px"></div>
+                        {% if res.keyword %}
+                        <p style="color: blue">
+                            <strong>关键词：</strong> {{ res.keyword }}
+                        </p>
+                        {% endif %}
+                        {% if res.doi %}
+                        <p style="color: #993300">
+                            <strong>doi:</strong> {{ res.doi }}
+                        </p>
+                        {% endif %}
+                        <p style="color: orange">
+                            <strong>来源：</strong> {{ res.source }}
+                        </p>
+                        <p style="color: #FF0033">
+                            <strong>日期：</strong> {{ res.time }}
+                        </p>
+                    </div>
+                    <div class="extra">
+                        <p style="color: #66CCFF">
+                            <strong>类型：</strong>
+                            <label class="ui label">{{res.type}}</label>
+                        </p>
+                        <div class="ui right floated button" style="width: 50px">
+                            <i class="icon download"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endfor %}
+
+    {% if not data.is_login %}
+    <div style="margin-top: 5px"></div>
+    <label class="ui large label" style="color: red">登陆获取更多内容!</label>
+    <div style="margin-top: 8px"></div>
+    {% endif %}
+
+    {% if data.is_page %}
+    <div class="ui center aligned pagination menu" style="margin-bottom: 10px">
+        {% if data.show_home %}
+        <a href="{{ data.url }} + &p=1" class="item">首页</a>
+        <a href="{{ data.url}} + &p={{ data.page-1 }}" class="item">上一页</a>
+        {% endif %}
+
+        <a class="disabled item">{{ data.page }} / {{ data.total }}</a>
+
+        {% if data.page < data.total %}
+        <a href="{{ data.url }} + &p={{ data.page+1 }}" class="item">下一页</a>
+        <a href="{{ data.url }} + &p={{ data.total }}" class="item">尾页</a>
+        {% endif %}
+    </div>
+    {% endif %}
+    {% endif %}
+
+</div>
+
+<script src="{{ buildStaticUrl('/js/jquery.min.js') }}"></script>
+<script src="{{ buildStaticUrl('/js/semantic.js') }}"></script>
+
+</body>
+<style id="stylus2" type="text/css" class="stylus">
+    ::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    body::-webkit-scrollbar {
+        width: 6px !important;
+        height: 6px !important;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.22) !important;
+        border-radius: 8px !important;
+    }
+
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #343434 !important;
+        min-height: 50px;
+        border-radius: 5px !important;
+    }
+
+
+    @keyframes fadein {
+        0% {
+            opacity: 0;
+        }
+        100% {
+        }
+    }
+
+    body {
+        animation-name: fadein;
+        animation-duration: 0.4s;
+    }
+
+    scrollbar *
+    scrollbar scrollbarbutton {
+        visibility: collapse !important;
+    }
+
+    scrollbar scrollbarbutton {
+        display: none !important;
+    }
+
+    scrollbar[orient="vertical"] {
+        background: rgba(255, 255, 255, 0.22) url(https://pbs.twimg.com/media/CKecQtCWoAA8keI.png) !important;
+        -moz-appearance: none !important;
+        min-width: 2px !important;
+        max-width: 2px !important;
+        border-radius: 5px;
+    }
+
+    scrollbar[orient="vertical"]:hover {
+        -moz-appearance: none !important;
+    }
+
+    scrollbar thumb[orient="vertical"] {
+        background: #6B6B6B !important;
+        -moz-appearance: none !important;
+        border-radius: 4px !important;
+        min-height: 25px !important;
+        min-width: 2px !important;
+        max-width: 2px !important;
+        border: 1px !important;
+        opacity: 0.87;
+    }
+
+    scrollbar thumb[orient="vertical"]:hover {
+        background: #6B6B6B !important;
+        border-radius: 4px !important;
+        border: 0px !important;
+        opacity: 1;
+    }
+
+    scrollbar[orient="horizontal"] {
+        background: rgba(255, 255, 255, 0.22) url(https://pbs.twimg.com/media/CKecQtCWoAA8keI.png) !important;
+        -moz-appearance: none !important;
+        background-color: transparent !important;
+        opacity: .75 !important;
+        min-height: 2px !important;
+        max-height: 9px !important;
+        border-radius: 5px;
+    }
+
+    scrollbar[orient="horizontal"]:hover {
+        -moz-appearance: none !important;
+        background-color: transparent !important;
+        min-height: 9px !important;
+        max-height: 9px !important
+    }
+
+    scrollbar thumb[orient="horizontal"] {
+        background: #6B6B6B !important;
+        -moz-appearance: none !important;
+        border-radius: 4px !important;
+        min-height: 7px !important;
+        max-height: 7px !important;
+        border: 1px !important;
+        margin-left: 0px !important;
+        opacity: 0.87;
+    }
+
+    scrollbar thumb[orient="horizontal"]:hover {
+        background: #6B6B6B !important;
+        border-radius: 4px !important;
+        border: 0px !important;
+        opacity: 1;
+    }
+
+    scrollcorner {
+        opacity: 0 !important
+    }
+
+    scrollbar scrollcorner:hover {
+        background: transparent !important
+    }
+</style>
+<style id="stylus1" type="text/css" class="stylus">
+    body {
+        background-image: url(
+        ../static/images/background.jpg
+        ) !important;
+        background-repeat: no-repeat !important;
+        background-position: center top !important;
+        background-size: cover !important;
+        background-attachment: fixed !important;
+        background-color: #CCCCCC;
+        font-family: "Microsoft YaHei" !important;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    #fbar {
+        background: rgba(242, 242, 242, 0.85) !important;
+        border-top: 0px !important;
+    }
+</style>
+</html>

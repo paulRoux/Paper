@@ -1,0 +1,19 @@
+{% with msgs = get_flashed_messages(category_filter=['ok']) %}
+    {% if msgs %}
+        {% for msg in msgs %}
+        <div class="ui mini compact success message" style="border-radius: 30px">
+            <p>{{ msg }}</p>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% with msgs = get_flashed_messages(category_filter=['err']) %}
+    {% if msgs %}
+        {% for msg in msgs %}
+        <div class="ui mini compact error message" style="border-radius: 30px">
+            <p>{{ msg }}</p>
+        </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}

@@ -1,0 +1,20 @@
+{
+  "spider": "cnkiwap",
+  "website": "中国知网",
+  "type": "论文/期刊/会议",
+  "settings": {
+    "ITEM_PIPELINES": {
+      "spider.pipelines.MongoPipeline": 400,
+      "spider.pipelines.CnkiWapPipeline": 300,
+      "spider.pipelines.SaveSearchWordPipeline": 450
+    },
+    "COOKIES_ENABLED": "True",
+    "MONGO_URI": "mongodb://localhost:27017",
+    "MONGO_DB": "CnkiWap",
+    "KEY_WORD": "大数据",
+    "MAX_PAGE": 1000
+  },
+  "allowed_domains": [
+    "cnki.net"
+  ]
+}

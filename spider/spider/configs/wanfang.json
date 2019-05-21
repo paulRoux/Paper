@@ -1,0 +1,19 @@
+{
+  "spider": "wanfang",
+  "website": "万方数据",
+  "type": "论文/期刊/会议",
+  "settings": {
+    "ITEM_PIPELINES": {
+      "spider.pipelines.MongoPipeline": 400,
+      "spider.pipelines.WanfangPipeline": 300,
+      "spider.pipelines.SaveSearchWordPipeline": 450
+    },
+    "MONGO_URI": "mongodb://localhost:27017/",
+    "MONGO_DB": "WanFang",
+    "KEY_WORD": "云计算",
+    "MAX_PAGE": 2
+  },
+  "allowed_domains": [
+    "wanfangdata.com.cn"
+  ]
+}
