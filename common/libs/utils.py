@@ -8,7 +8,6 @@ import subprocess
 # from flask import request
 from datetime import datetime
 from application import app
-from configs.setting import MAX_PAGE
 
 
 # 获取格式化的时间
@@ -49,7 +48,7 @@ def change_filename(filename):
 
 
 def run_spider(base, keyword):
-    cmd = 'python run.py {} -m {} -k "{}"'.format(base, MAX_PAGE, keyword)
+    cmd = 'python run.py {} -k "{}"'.format(base, keyword)
     # cwd = os.path.abspath(os.path.join(os.getcwd(), "../../spider"))
     os.getcwd()
     cwd = os.getcwd() + "/spider"
@@ -95,3 +94,21 @@ def run_spider(base, keyword):
 #     用于模版中循环
 #     dic = range(start, end + 1)
 #     return dic
+
+
+def get_max_length(str_list):
+    max_length = 1
+    for value in str_list.values():
+        for val in value:
+            if len(val) > max_length:
+                max_length = len(val)
+    return max_length
+
+
+def get_second_length(str_list):
+    li = []
+    for value in str_list.values():
+        for val in value:
+            li.append(len(val))
+    li.sort(reverse=True)
+    return li[1]

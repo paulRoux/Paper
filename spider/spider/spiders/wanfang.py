@@ -95,10 +95,19 @@ class WanfangSpider(CrawlSpider):
         info = response.xpath("//div[@class='left_con_top']")
         item['title'] = str(info.xpath(".//div[@class='title']/text()").extract_first()).strip()
 
+        # authors = info.xpath(
+        #     ".//div[contains(text(),'作者：')]/following-sibling::div//a[contains(@id, 'card')]/text()"
+        # ).extract()
         authors = info.xpath(
-            ".//div[contains(text(),'作者：')]/following-sibling::div//a/text()"
+            "//div[contains(text(), '作者：')]/following-sibling::div/input/@value"
         ).extract()
-        item['author'] = ["".join(author).strip() for author in authors[:-1]]
+        # item['author'] = [author.strip() for author in authors]
+        for value in authors:
+            if value == "":
+                authors.remove(value)
+        authors.reverse()
+        print(authors)
+        item['author'] = [author.strip() for author in authors[1::2]]
         if len(item['author']) == 0:
             weight -= 3
             item['author'] = None
@@ -142,6 +151,8 @@ class WanfangSpider(CrawlSpider):
             item['digest'] = None
         else:
             item['digest'] = "摘要：" + digest.replace("\n", "").replace("\t", "").replace(" ", "")
+
+        item['weight'] = weight
 
         self.log("{} was finished".format(response.meta['link']), level=logging.INFO)
 

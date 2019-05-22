@@ -5,7 +5,8 @@ from application import db, app
 from flask import render_template, Blueprint, session, flash, redirect, request
 from common.forms.index import IndexForm
 from common.models.user import UserLog
-from common.libs.utils import run_spider
+from common.libs.segmentation import Segmentation
+from common.libs.utils import run_spider, get_max_length
 from common.libs.UrlManager import UrlManager
 from configs.setting import DATABASE, URI, COLLECTION, SEARCH_DB, SEARCH_COL, APPLICATION, PAGE_SIZE
 
@@ -27,6 +28,9 @@ def index():
         data['keyword'] = session['keyword']
 
         if session['keyword'] is not None and session['keyword'] != "":
+            if len(session['keyword']) < 2:
+                flash("输入的关键词太短", 'err')
+                return redirect(UrlManager.build_url_path("index_page.find"))
             if "login_user_id" in session:
                 userlog = UserLog.query.filter_by(user_id=session['login_user_id'])
                 session['show'] = True
@@ -56,12 +60,18 @@ def search():
 
     keyword = None
     if "keyword" in session and session['keyword'] is not None:
-        keyword = session['keyword']
+        if len(session['keyword']) > 1:
+            keyword = session['keyword']
+        else:
+            flash("输入的关键词太短", 'err')
+            return redirect(UrlManager.build_url_path("index_page.find"))
     else:
         keyword = request.values.get("search_word")
+
     if keyword is not None:
         keyword = keyword.strip()
     else:
+        flash("请输入关键词搜索", 'err')
         return redirect(UrlManager.build_url_path("index_page.find"))
     session['word'] = keyword
     url = APPLICATION['domain'] + "/search?search_word=" + keyword
@@ -82,13 +92,25 @@ def search():
     db = client[SEARCH_DB]
     collection = db[SEARCH_COL]
     # word = collection.find_one({"keyword": data['keyword']})
+    seg_list = []
+    seg = Segmentation()
+    seg.set_sentence(keyword)
+    seg.rmm_seg()
+    segment = seg.get_result_dict()
+    max_len = get_max_length(segment)
+    for value in segment.values():
+        for val in value:
+            if len(val) >= max_len:
+                seg_list.append(val)
+
     word = []
     words = collection.find()
     for value in words:
-        if value['keyword'] in data['keyword']:
-            word.append(value['keyword'])
-        elif data['keyword'] in value['keyword']:
-            word.append(data['keyword'])
+        for s in seg_list:
+            if s == value['keyword'] or value['keyword'] in s:
+                word.append(s)
+            elif s in value['keyword']:
+                word.append(value['keyword'])
 
     if not word:
         if data['keyword'] is not None and data['keyword'] != "":
@@ -117,13 +139,12 @@ def search():
         else:
             data = None
     else:
-        word['hot'] += 1
         res_list = []
         for value in DATABASE.values():
             db = client[value]
-            for v in COLLECTION.values():
-                if v == value + "Item":
-                    collection = db[v]
+            for val in COLLECTION.values():
+                if val == value + "Item":
+                    collection = db[val]
                     if len(word) != 1:
                         for key in word:
                             res = collection.find({"search_word": key}).sort(
@@ -147,14 +168,13 @@ def search():
                         data['is_page'] = True
                         data['results'].append(res_list)
                     else:
-                        word -= 1
                         flash("没有找到数据", "err")
                         data['is_page'] = False
                         session['find'] = False
                         return redirect(UrlManager.build_url_path("index_page.find"))
                 else:
                     continue
-        total = int((math.ceil(number / page_size) / len(DATABASE)) - 1)  # 总页数
+        total = int((math.ceil(number / page_size) / len(DATABASE)))  # 总页数
         if "login_user_id" in session:
             data['total'] = total
             data['is_login'] = True

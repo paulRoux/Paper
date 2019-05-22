@@ -37,7 +37,7 @@ COLLECTION = {
     # "cnkiwap": "CnkiWapItem"
 }
 
-# 根据数据库的多少来设置正个页面的显示量
-PAGE_SIZE = 3
+SIZE = 6
 
-MAX_PAGE = 1
+# 根据数据库的多少来设置正个页面的显示量
+PAGE_SIZE = SIZE // len(DATABASE)

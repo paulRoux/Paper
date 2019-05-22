@@ -89,7 +89,6 @@ class SaveSearchWordPipeline(object):
             "keyword": self.search_word,
             "source": [],
             "count": 1,
-            "hot": 1
         }
         self.name = item.__class__.__name__
         # table = self.name + MONGODB['collection']
