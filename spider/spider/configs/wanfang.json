@@ -7,6 +7,7 @@
       "spider.pipelines.MongoPipeline": 400,
       "spider.pipelines.WanfangPipeline": 300,
       "spider.pipelines.SaveSearchWordPipeline": 450
+//      "scrapy_redis.pipelines.RedisPipeline": 460
     },
     "MONGO_URI": "mongodb://localhost:27017/",
     "MONGO_DB": "WanFang",

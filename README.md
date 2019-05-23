@@ -53,4 +53,10 @@
 
 3. 其他
 
+    - 本项目默认不开启代理池，如果要开启的话，在根目录下的`spider/spider/settings.py`里面找到`DOWNLOADER_MIDDLEWARES`把注释去掉即可
+    
+    - 本项目默认不开启`redis`存储，如果要开启的话，在`spider/spider/spiders/`下面将除过`__init__.py`的文件的`class`以及上面的头文件的注释去掉
+        - 然后在`spider/spider/settings.py`里面将最后的关于`redis`的注释去掉
+        - 接着找到`spider/spider/configs/`下面除过`base_setting.py`的`json`文件，将关于`redis`的注释去掉，并注释掉上面一句关于`MongoDB`的配置
+    
     - 本项目还存在一些没有发现的问题，和许多功能的完善及增加
