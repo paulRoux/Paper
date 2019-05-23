@@ -6,6 +6,9 @@ from spider.utils import utils
 from spider.configs import base_setting
 from spider.items import WanFangItem
 
+# from scrapy_redis.spiders import RedisSpider
+# class WanfangSpider(RedisSpider):
+
 
 class WanfangSpider(CrawlSpider):
     name = 'wanfang'

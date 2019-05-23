@@ -2,11 +2,13 @@ import argparse
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 from spider.utils import utils, check_db
+from spider.utils.utils import run_proxy_pool
 
 
 def run():
     """ 输入参数列表：name, keyword, maxpage mongo_uri, mongo_db 可选 """
 
+    run_proxy_pool()
     arg_settings = {}
     parser = argparse.ArgumentParser()
     parser.add_argument("name", type=str, help="input the spider name")

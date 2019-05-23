@@ -6,6 +6,9 @@ from spider.utils import utils
 from spider.configs import base_setting
 from spider.items import CnkiWapItem
 
+# from scrapy_redis.spiders import RedisSpider
+# class CnkiWapSpider(RedisSpider):
+
 
 class CnkiWapSpider(scrapy.Spider):
     name = 'cnkiwap'

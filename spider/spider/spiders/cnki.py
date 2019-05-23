@@ -9,6 +9,10 @@ from spider.configs import base_setting
 from spider.items import CnkiItem
 
 
+# from scrapy_redis.spiders import RedisSpider
+# class CnkiSpider(RedisSpider):
+
+
 class CnkiSpider(scrapy.Spider):
     name = 'cnki'
 
@@ -65,7 +69,7 @@ class CnkiSpider(scrapy.Spider):
 
         self.log("total page is {}".format(str(max_page)), level=logging.INFO)
 
-        for page_num in range(self.min_page, self.max_page+1):
+        for page_num in range(self.min_page, self.max_page + 1):
             if page_num <= max_page:
                 base_setting.CNKI_PARSE_LIST['curpage'] = page_num
                 query_string = parse.urlencode(base_setting.CNKI_PARSE_LIST)
@@ -114,8 +118,8 @@ class CnkiSpider(scrapy.Spider):
         weight = 10
         item['search_word'] = self.key_word
         item['title'] = response.xpath(
-                "//div[@id='mainArea']//div[@class='wxTitle']/h2[@class='title']/text()"
-            ).extract_first()
+            "//div[@id='mainArea']//div[@class='wxTitle']/h2[@class='title']/text()"
+        ).extract_first()
 
         authors = response.xpath(
             "//div[@id='mainArea']//div[@class='wxTitle']//div[@class='author']//span/a/text()"
@@ -162,4 +166,3 @@ class CnkiSpider(scrapy.Spider):
 
         # print(item)
         yield item
-

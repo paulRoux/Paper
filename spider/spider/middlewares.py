@@ -9,6 +9,7 @@ import requests
 from fake_useragent import UserAgent
 from scrapy import signals
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from spider.settings import GET_PROXY
 
 
 class RandomUserAgentMiddleware(UserAgentMiddleware):
@@ -16,9 +17,9 @@ class RandomUserAgentMiddleware(UserAgentMiddleware):
         request.headers['User-Agent'] = UserAgent().random
 
 
-class ProxyMiddleware(object):
+class RandomProxyMiddleware(object):
     def get_proxy(self):
-        return requests.get("http://127.0.0.1:5555").text
+        return requests.get(GET_PROXY).text
 
     def process_request(self, request, spider):
         request.meta["proxy"] = self.get_proxy()
