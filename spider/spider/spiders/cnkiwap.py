@@ -118,7 +118,7 @@ class CnkiWapSpider(scrapy.Spider):
         ).extract()
         item['author'] = [author.strip() for author in authors]
         if len(item['author']) == 0:
-            weight -= 1
+            weight -= 3
             item['author'] = None
 
         keywords = response.xpath(
@@ -126,7 +126,7 @@ class CnkiWapSpider(scrapy.Spider):
         ).extract()
         item['keyword'] = [key.strip() for key in keywords]
         if len(item['keyword']) == 0:
-            weight -= 1
+            weight -= 2
             item['keyword'] = None
 
         sources = response.xpath("//div[@class='c-card__paper-content']//a/text()").extract()
@@ -147,7 +147,7 @@ class CnkiWapSpider(scrapy.Spider):
 
         digest = "".join(response.xpath("//div[@class='c-card__aritcle']/text()").extract()).strip()
         if digest == "":
-            weight -= 2
+            weight -= 3
             item['digest'] = None
         else:
             item['digest'] = digest.replace("\n", "").replace("\t", "").replace(" ", "")

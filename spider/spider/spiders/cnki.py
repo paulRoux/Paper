@@ -126,13 +126,15 @@ class CnkiSpider(scrapy.Spider):
         ).extract()
         item['author'] = [author.strip() for author in authors]
         if len(item['author']) == 0:
-            weight -= 1
+            weight -= 3
             item['author'] = None
 
-        keywords = response.xpath("//*[@id='catalog_KEYWORD']/following-sibling::*/text()").extract()
+        keywords = response.xpath(
+            "//*[@id='catalog_KEYWORD']/following-sibling::*/text()"
+        ).extract()
         item['keyword'] = [key.strip().replace(";", "") for key in keywords]
         if len(item['keyword']) == 0:
-            weight -= 1
+            weight -= 2
             item['keyword'] = None
 
         item['source'] = response.xpath(
@@ -155,7 +157,7 @@ class CnkiSpider(scrapy.Spider):
 
         digest = "".join(response.xpath("//*[@id='ChDivSummary']/text()").extract()).strip()
         if digest == "":
-            weight -= 2
+            weight -= 3
             item['digest'] = None
         else:
             item['digest'] = "摘要：" + digest.replace("\n", "").replace("\t", "").replace(" ", "")
