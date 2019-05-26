@@ -52,6 +52,9 @@
         - 本项目设置了用户的相关模块，不登录默认只显示一页，用户可以先注册，然后登陆查询即可
 
 3. 其他
+    - 本项目默认开启`日志`记录功能，级别为`INFO`
+        - 爬虫的日志在根目录下的`spider/spider/`下的`crawler.log`文件里面
+        - 前端的日志在根目录下的下的`flask.log`文件里面
 
     - 本项目默认不开启代理池，如果要开启的话，在根目录下的`spider/spider/settings.py`里面找到`DOWNLOADER_MIDDLEWARES`把注释去掉
         - 然后在根目录的`common/configs/setting.py`里面将`IPPROXY`改为`True`

@@ -100,6 +100,14 @@ DOWNLOADER_MIDDLEWARES = {
 # HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 
+# 日志持久化
+LOG_ENABLED = True
+LOG_FILE = "crawler.log"
+LOG_LEVEL = "INFO"
+LOG_ENCODING = "utf-8"
+LOG_STDOUT = False
+
+
 # # 使用redis存储爬取的信息，后续可以持久化到数据库
 # # 配置redis数据库信息
 # # redis数据库主机---

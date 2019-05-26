@@ -3,6 +3,7 @@ from flask import Flask, render_template
 from flask_script import Manager
 from flask_sqlalchemy import SQLAlchemy
 import os
+import logging
 
 
 class Application(Flask):
@@ -22,6 +23,12 @@ class Application(Flask):
 
 db = SQLAlchemy()
 app = Application(__name__, template_folder=os.getcwd() + "/web/templates/", root_path=os.getcwd())
+handler = logging.FileHandler('flask.log')
+handler.setLevel(logging.INFO)
+logging_format = logging.Formatter(
+        '%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s'
+)
+app.logger.addHandler(handler)
 manager = Manager(app)
 
 
