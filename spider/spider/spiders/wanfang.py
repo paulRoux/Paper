@@ -109,7 +109,6 @@ class WanfangSpider(CrawlSpider):
             if value == "":
                 authors.remove(value)
         authors.reverse()
-        print(authors)
         item['author'] = [author.strip() for author in authors[1::2]]
         if len(item['author']) == 0:
             weight -= 3

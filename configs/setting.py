@@ -41,3 +41,7 @@ SIZE = 6
 
 # 根据数据库的多少来设置正个页面的显示量
 PAGE_SIZE = SIZE // len(DATABASE)
+
+IP_PROXY = "False"
+
+MAX_PAGE = 1

@@ -30,7 +30,7 @@
         - 出版日期
         - 摘要
 
-    3. 其他(后续增加)
+    3. 其他(TODO)
         - 百度文库
         - 360学术
         - 其他的论文网站(优先)
@@ -53,10 +53,15 @@
 
 3. 其他
 
-    - 本项目默认不开启代理池，如果要开启的话，在根目录下的`spider/spider/settings.py`里面找到`DOWNLOADER_MIDDLEWARES`把注释去掉即可
+    - 本项目默认不开启代理池，如果要开启的话，在根目录下的`spider/spider/settings.py`里面找到`DOWNLOADER_MIDDLEWARES`把注释去掉
+        - 然后在根目录的`common/configs/setting.py`里面将`IPPROXY`改为`True`
     
     - 本项目默认不开启`redis`存储，如果要开启的话，在`spider/spider/spiders/`下面将除过`__init__.py`的文件的`class`以及上面的头文件的注释去掉
         - 然后在`spider/spider/settings.py`里面将最后的关于`redis`的注释去掉
-        - 接着找到`spider/spider/configs/`下面除过`base_setting.py`的`json`文件，将关于`redis`的注释去掉，并注释掉上面一句关于`MongoDB`的配置
+        - 接着找到`spider/spider/configs/`下面除过`base_setting.py`的`json`文件，在`ITEM_PIPELINES`里面加上`"scrapy_redis.pipelines.RedisPipeline": 460`，并注释掉上面一句关于`MongoDB`的配置
+    
+    - 本项目默认不开启`cnkiwap`的爬取，如果需要开启，取消在根目录下的`common/configs/setting.py`里面的`DATABASE`和`COLLECTION`中关于`cnikwap`的注释
+    
+    - 本项目默认爬取数据的页数为`1页`，如果需要调整，修改在根目录下的`common/configs/setting.py`里面的`MAX_PAGE`，最大值为100页
     
     - 本项目还存在一些没有发现的问题，和许多功能的完善及增加

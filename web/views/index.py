@@ -1,14 +1,13 @@
 import pymongo
 import math
 from multiprocessing import Pool
-from application import db, app
+from application import app
 from flask import render_template, Blueprint, session, flash, redirect, request
 from common.forms.index import IndexForm
-from common.models.user import UserLog
 from common.libs.segmentation import Segmentation
-from common.libs.utils import run_spider, get_max_length
+from common.libs.utils import run_spider, get_max_length, check_login_status, check_keyword
 from common.libs.UrlManager import UrlManager
-from configs.setting import DATABASE, URI, COLLECTION, SEARCH_DB, SEARCH_COL, APPLICATION, PAGE_SIZE
+from configs.setting import DATABASE, URI, COLLECTION, SEARCH_DB, SEARCH_COL, APPLICATION, PAGE_SIZE, IP_PROXY, MAX_PAGE
 
 route_index = Blueprint("index_page", __name__)
 
@@ -21,21 +20,13 @@ def index():
         "url": ""
     }
     session['show'] = False
-    session['word'] = None
-
     if form.validate_on_submit():
         session['keyword'] = form.data['keyword']
         data['keyword'] = session['keyword']
 
         if session['keyword'] is not None and session['keyword'] != "":
-            if len(session['keyword']) < 2:
-                flash("输入的关键词太短", 'err')
-                return redirect(UrlManager.build_url_path("index_page.find"))
-            if "login_user_id" in session:
-                userlog = UserLog.query.filter_by(user_id=session['login_user_id'])
-                session['show'] = True
-                userlog.search_word = session['keyword']
-                db.session.commit()
+            check_login_status(session)
+            session['show'] = True
             url = UrlManager.build_url_path("index_page.search") + "?search_word=" + data['keyword']
             data['url'] = APPLICATION['domain'] + url
             session['word'] = session['keyword']
@@ -59,21 +50,19 @@ def search():
     session['find'] = False
 
     keyword = None
-    if "keyword" in session and session['keyword'] is not None:
-        if len(session['keyword']) > 1:
-            keyword = session['keyword']
-        else:
-            flash("输入的关键词太短", 'err')
-            return redirect(UrlManager.build_url_path("index_page.find"))
+    if "keyword" in session and session['keyword'] is not None and session['keyword'] != "":
+        keyword = session['keyword']
     else:
         keyword = request.values.get("search_word")
 
-    if keyword is not None:
+    if keyword is not None and keyword != "":
         keyword = keyword.strip()
     else:
-        flash("请输入关键词搜索", 'err')
+        flash("请输入关键词搜索", category='err')
         return redirect(UrlManager.build_url_path("index_page.find"))
-    session['word'] = keyword
+
+    session['keyword'] = keyword
+    check_login_status(session)
     url = APPLICATION['domain'] + "/search?search_word=" + keyword
     data = {
         "keyword": keyword,
@@ -102,6 +91,7 @@ def search():
         for val in value:
             if len(val) >= max_len:
                 seg_list.append(val)
+    app.logger.info("分词结果：{}".format(seg_list))
 
     word = []
     words = collection.find()
@@ -114,12 +104,11 @@ def search():
 
     if not word:
         if data['keyword'] is not None and data['keyword'] != "":
-            session['find'] = True
             pool = Pool()
             count = 0
             result_list = []
             for base in DATABASE.values():
-                result = pool.apply_async(run_spider, (base, data['keyword']))
+                result = pool.apply_async(run_spider, (base, data['keyword'], IP_PROXY, MAX_PAGE))
                 result_list.append(result)
 
             pool.close()
@@ -131,10 +120,11 @@ def search():
                 if count >= len(DATABASE):
                     session['find'] = False
                     data['is_page'] = False
-                    flash("暂时没有找到数据", "err")
+                    flash("暂时没有找到数据", category='err')
                     return redirect(UrlManager.build_url_path("index_page.find"))
             data['is_page'] = True
             app.logger.info("crawler was successful")
+            session['find'] = True
             return redirect(UrlManager.build_url_path("index_page.find"))
         else:
             data = None
@@ -168,7 +158,7 @@ def search():
                         data['is_page'] = True
                         data['results'].append(res_list)
                     else:
-                        flash("没有找到数据", "err")
+                        flash("没有找到数据", category='err')
                         data['is_page'] = False
                         session['find'] = False
                         return redirect(UrlManager.build_url_path("index_page.find"))
@@ -190,10 +180,9 @@ def search():
 @route_index.route("/find")
 def find():
     data = {
-        "keyword": session['word']
+        "keyword": session['keyword']
     }
     if session['find']:
-        session['keyword'] = data['keyword']
-        # flash("查找数据完成，请点击上面搜索按钮继续搜索!", "ok")
+        # flash("查找数据完成，请点击上面搜索按钮继续搜索!", category='ok)
         return redirect(UrlManager.build_url_path("index_page.search"))
     return render_template("find.html", data=data)

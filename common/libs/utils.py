@@ -7,7 +7,10 @@ import uuid
 import subprocess
 # from flask import request
 from datetime import datetime
-from application import app
+from application import app, db
+from flask import flash, redirect
+from common.libs.UrlManager import UrlManager
+from common.models.user import UserLog
 
 
 # 获取格式化的时间
@@ -40,6 +43,32 @@ def check_pwd(pwd, old_pwd, slat):
     return pwd == generate_password(old_pwd, slat)
 
 
+def check_keyword(keyword):
+    if len(keyword) < 2:
+        flash("输入的关键词太短", category='err')
+        return redirect(UrlManager.build_url_path("index_page.find"))
+
+
+def check_login_status(session):
+    check_keyword(session['keyword'])
+    if "login_user_id" in session:
+        userlog = UserLog.query.filter_by(user_id=session['login_user_id']).first()
+        if userlog:
+            userlog.search_word = session['keyword']
+            db.session.add(userlog)
+            db.session.commit()
+        else:
+            flash("登录失效,请重新登陆", category='err')
+            session.pop('login_user', None)
+            session.pop('login_user_id', None)
+            return redirect(UrlManager.build_url_path("user_page.login"))
+    else:
+        flash("登录失效,请重新登陆", category='err')
+        if "login_user" in session:
+            session.pop('login_user', None)
+        return redirect(UrlManager.build_url_path("user_page.login"))
+
+
 def change_filename(filename):
     fileinfo = os.path.splitext(filename)  # 分离包含路径的文件名与包含点号的扩展名
     filename = datetime.now().strftime("%Y%m%d%H%M%S") + str(uuid.uuid4().hex + fileinfo[-1])
@@ -47,8 +76,10 @@ def change_filename(filename):
     return filename
 
 
-def run_spider(base, keyword):
-    cmd = 'python run.py {} -k "{}"'.format(base, keyword)
+def run_spider(base, keyword, ip_proxy, max_page):
+    if max_page > 100:
+        max_page = 100
+    cmd = 'python run.py {} -k "{}" -p {} -m {}'.format(base, keyword, ip_proxy, max_page)
     # cwd = os.path.abspath(os.path.join(os.getcwd(), "../../spider"))
     os.getcwd()
     cwd = os.getcwd() + "/spider"

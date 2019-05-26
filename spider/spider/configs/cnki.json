@@ -7,13 +7,12 @@
       "spider.pipelines.MongoPipeline": 400,
       "spider.pipelines.CnkiPipeline": 300,
       "spider.pipelines.SaveSearchWordPipeline": 450
-//      "scrapy_redis.pipelines.RedisPipeline": 460
     },
     "COOKIES_ENABLED": "True",
     "MONGO_URI": "mongodb://localhost:27017/",
     "MONGO_DB": "Cnki",
-    "KEY_WORD": "人工智能",
-    "MAX_PAGE": 1000
+    "KEY_WORD": "",
+    "MAX_PAGE": 10
   },
   "allowed_domains": [
     "cnki.net"

@@ -7,12 +7,11 @@
       "spider.pipelines.MongoPipeline": 400,
       "spider.pipelines.WanfangPipeline": 300,
       "spider.pipelines.SaveSearchWordPipeline": 450
-//      "scrapy_redis.pipelines.RedisPipeline": 460
     },
     "MONGO_URI": "mongodb://localhost:27017/",
     "MONGO_DB": "WanFang",
-    "KEY_WORD": "云计算",
-    "MAX_PAGE": 2
+    "KEY_WORD": "",
+    "MAX_PAGE": 10
   },
   "allowed_domains": [
     "wanfangdata.com.cn"

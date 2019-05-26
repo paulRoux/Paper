@@ -97,11 +97,11 @@ class Segmentation(object):
                     p[i] = self.word_frequency_dict[self.sentence[i:i + k]] * p[i + k]
                     div[i] = self.word_frequency_dict['_total_'] * div[i + k]
                     t[i] = k
-        i = 0
+        le = 0
         seg_result = []
-        while i < length:
-            seg_result.append(self.sentence[i:i + t[i]])
-            i += t[i]
+        while le < length:
+            seg_result.append(self.sentence[le:le + t[le]])
+            le += t[le]
         self.seg_result_dict['MP'] = seg_result
 
     @staticmethod
@@ -144,7 +144,7 @@ class Segmentation(object):
 
 
 if __name__ == '__main__':
-    sen = '区块链在物联网的应用'
+    sen = '爬虫在大数据的应用'
     seg = Segmentation()
     seg.set_sentence(sen)
     seg.mm_seg()  # MM
@@ -154,5 +154,6 @@ if __name__ == '__main__':
     # print '|'.join(r['MM'])
     # print '|'.join(r['RMM'])
     # print '|'.join(r['MP'])
-    # seg.print_result()  # 将分词结果输出
-    print(seg.get_result_dict())
+    print("待切分的字符串: {}".format(sen))
+    seg.print_result()  # 将分词结果输出
+    # print(seg.get_result_dict())

@@ -1,4 +1,5 @@
 import os
+from datetime import datetime
 from flask import Blueprint, flash, redirect, render_template, session, request
 from application import db
 from werkzeug.utils import secure_filename
@@ -15,7 +16,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         if "login_user_id" in session:
-            flash("账号已登录", "ok")
+            flash("账号已登录", category='ok')
             return render_template("login.html", form=form)
         data = form.data
         user = User.query.filter_by(name=data['name']).first()
@@ -25,14 +26,19 @@ def login():
                 return redirect(UrlManager.build_url_path("user_page.login"))
             session['login_user'] = user.name
             session['login_user_id'] = user.id
-            userlog = UserLog(
-                user_id=user.id,
-                ip=request.remote_addr
-            )
+            userlog = UserLog.query.filter_by(user_id=user.id).first()
+            if userlog:
+                userlog.ip = request.remote_addr
+                userlog.login_time = datetime.now()
+            else:
+                userlog = UserLog(
+                    user_id=user.id,
+                    ip=request.remote_addr
+                )
             db.session.add(userlog)
             db.session.commit()
         else:
-            flash("用户名错误", 'err')
+            flash("用户名错误", category='err')
             return redirect(UrlManager.build_url_path("user_page.login"))
         return redirect(UrlManager.build_url_path("index_page.index"))
 
@@ -68,7 +74,7 @@ def logout():
 @route_user.route("/info", methods=['GET'])
 def info():
     if "login_user_id" not in session:
-        flash("请先登录", "err")
+        flash("请先登录", category='err')
         return redirect(UrlManager.build_url_path("user_page.login"))
     login_user = User.query.get_or_404(int(session['login_user_id']))
     form = UserInfoForm(
@@ -83,7 +89,7 @@ def info():
 @route_user.route("/edit", methods=['GET', 'POST'])
 def edit():
     if "login_user_id" not in session:
-        flash("请先登录", "err")
+        flash("请先登录", category='err')
         return redirect(UrlManager.build_url_path("user_page.login"))
     login_user = User.query.get_or_404(int(session['login_user_id']))
     form = UserEditForm(
@@ -111,12 +117,12 @@ def edit():
                 form.face.data.save(face_save_path + login_user.face)
 
         if login_user.name != data['name'] and User.query.filter_by(name=data['name'].count) == 1:
-            flash("账号已存在", "err")
+            flash("账号已存在", category='err')
             return redirect(UrlManager.build_url_path("user_page.edit"))
         login_user.name = data['name']
 
         if login_user.email != data['email'] and User.query.filter_by(email=data['email']).count() == 1:
-            flash("邮箱已存在", "err")
+            flash("邮箱已存在", category='err')
             return redirect(UrlManager.build_url_path("user_page.edit"))
         login_user.email = data['email']
 
