@@ -40,6 +40,9 @@ def login():
         else:
             flash("用户名错误", category='err')
             return redirect(UrlManager.build_url_path("user_page.login"))
+        if "keyword" in session:
+            if session['keyword'] is not None and session['keyword'] != "":
+                return redirect(UrlManager.build_url_path("index_page.search"))
         return redirect(UrlManager.build_url_path("index_page.index"))
 
     return render_template("login.html", form=form)

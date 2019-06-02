@@ -60,7 +60,7 @@ DOWNLOAD_DELAY = float("{:.1f}".format(uniform(0.5, 2)))
 DOWNLOADER_MIDDLEWARES = {
     # 'spider.middlewares.SpiderDownloaderMiddleware': 543,
     'spider.middlewares.RandomUserAgentMiddleware': 401,
-    # IP 代理 自行开启
+    # IP 代理 开启
     # 'spider.middlewares.RandomProxyMiddleware': 403
 }
 

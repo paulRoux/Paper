@@ -1,8 +1,7 @@
 import argparse
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
-from spider.utils import utils, check_db
-from spider.utils.utils import run_proxy_pool
+from spider.utils.utils import run_proxy_pool, get_config
 
 
 def run():
@@ -33,7 +32,7 @@ def run():
     if args.proxy:
         arg_settings["PROXY"] = args.proxy
 
-    custom_settings = utils.get_config(name)
+    custom_settings = get_config(name)
     spider = custom_settings.get('spider')
     project_settings = get_project_settings()
     settings = dict(project_settings.copy())
