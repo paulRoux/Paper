@@ -40,6 +40,14 @@ class WanfangPipeline(object):
         return item
 
 
+class XueShuPipeline(object):
+    def process_item(self, item, spider):
+        if len(item['title']) == "" or item['keyword'] == 0 and len(item['author']) == 0:
+            logging.log(msg="the {} item will be dropped".format(item['link']), level=logging.INFO)
+            raise DropItem("useless item")
+        return item
+
+
 class MongoPipeline(object):
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri

@@ -1,0 +1,20 @@
+{
+  "spider": "ixueshu",
+  "website": "爱学术",
+  "type": "论文/期刊/会议",
+  "settings": {
+    "ITEM_PIPELINES": {
+      "spider.pipelines.MongoPipeline": 400,
+      "spider.pipelines.XueShuPipeline": 300,
+      "spider.pipelines.SaveSearchWordPipeline": 450
+    },
+    "COOKIES_ENABLED": "True",
+    "MONGO_URI": "mongodb://localhost:27017/",
+    "MONGO_DB": "XueShu",
+    "KEY_WORD": "",
+    "MAX_PAGE": 10
+  },
+  "allowed_domains": [
+    "ixueshu.com"
+  ]
+}

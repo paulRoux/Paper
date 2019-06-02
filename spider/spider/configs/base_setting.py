@@ -139,3 +139,16 @@ CNKI_WAP_PARSE = {
     "endtime_sc": "",
     "timestate_sc": "1"
 }
+
+
+# 爱学术
+IXUESHU_START = {
+    "q": "",
+    "sort": "year desc"
+}
+
+IXUESHU_LINK = {
+    "q": "",
+    "sort": "year desc",
+    "page": ""
+}

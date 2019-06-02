@@ -57,3 +57,18 @@ class WanFangItem(scrapy.Item):
     digest = scrapy.Field()
     link_md5 = scrapy.Field()
     weight = scrapy.Field()
+
+
+class XueShuItem(scrapy.Item):
+    search_word = scrapy.Field()
+    title = scrapy.Field()
+    author = scrapy.Field()
+    source = scrapy.Field()
+    time = scrapy.Field()
+    type = scrapy.Field()
+    keyword = scrapy.Field()
+    doi = scrapy.Field()
+    link = scrapy.Field()
+    digest = scrapy.Field()
+    link_md5 = scrapy.Field()
+    weight = scrapy.Field()
