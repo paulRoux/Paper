@@ -76,11 +76,9 @@ def search():
         "results": []
     }
 
-    number = 0  # 分页使用
     client = pymongo.MongoClient(URI)
     db = client[SEARCH_DB]
     collection = db[SEARCH_COL]
-    # word = collection.find_one({"keyword": data['keyword']})
     seg_list = []
     seg = Segmentation()
     seg.set_sentence(keyword)
@@ -93,14 +91,33 @@ def search():
                 seg_list.append(val)
     app.logger.info("分词结果：{}".format(seg_list))
 
+    # for value in segment.values():
+    #     for val in value:
+    #         if len(val) > 1:
+    #             seg_list.append(val)
+    # app.logger.info("分词结果：{}".format(seg_list))
+
     word = []
     words = collection.find()
     for value in words:
         for s in seg_list:
             if s == value['keyword'] or value['keyword'] in s:
-                word.append(s)
+                if s not in word:
+                    word.append(s)
             elif s in value['keyword']:
-                word.append(value['keyword'])
+                if value['keyword'] not in word:
+                    word.append(value['keyword'])
+
+    # word = ""
+    # words = collection.find_one({'keyword': {"$in": seg_list}})
+    # if words:
+    #     word += words
+    # else:
+    #     string = ""
+    #     for li in seg_list:
+    #         string += li
+    #     if string:
+    #         word += string
 
     if not word:
         if data['keyword'] is not None and data['keyword'] != "":
@@ -130,13 +147,17 @@ def search():
             data = None
     else:
         res_list = []
+        number = 0  # 分页使用
+        page_size = int(page_size / len(word))
+        if page_size < 1:
+            page_size = 1
         for value in DATABASE.values():
             db = client[value]
             for val in COLLECTION.values():
                 if val == value + "Item":
                     collection = db[val]
-                    if len(word) != 1:
-                        for key in word:
+                    if len(word) > 1:
+                        for key in word[:3]:
                             res = collection.find({"search_word": key}).sort(
                                 [('weight', pymongo.DESCENDING), ('_id', pymongo.DESCENDING)]
                             ).limit(page_size).skip(
@@ -164,7 +185,7 @@ def search():
                         return redirect(UrlManager.build_url_path("index_page.find"))
                 else:
                     continue
-        total = int((math.ceil(number / page_size) / len(DATABASE)))  # 总页数
+        total = int((math.ceil(number / page_size) / len(DATABASE)) / len(word))  # 总页数
         if "login_user_id" in session:
             data['total'] = total
             data['is_login'] = True
@@ -173,15 +194,17 @@ def search():
         # dic = get_page(total, page)
         # data['dic_list'] = dic
     client.close()
+    session['keyword'] = ""
 
     return render_template("search.html", data=data)
 
 
 @route_index.route("/find")
 def find():
-    data = {
-        "keyword": session['keyword']
-    }
+    data = {}
+    if "keyword" in session:
+        data['keyword'] = session['keyword']
+
     if session['find']:
         # flash("查找数据完成，请点击上面搜索按钮继续搜索!", category='ok)
         return redirect(UrlManager.build_url_path("index_page.search"))

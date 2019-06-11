@@ -63,7 +63,7 @@ CNKI_PARSE_LIST = {
 
 # 万方的请求数据
 WANFANG = {
-    "searchType": "perio",
+    "searchType": "all",
     "showType": "detail",
     "pageSize": 20,
     "searchWord": "",  # 需要在start_requests里面设置
@@ -72,7 +72,7 @@ WANFANG = {
 
 WANFANG_NEXT = {
     "beetlansyId": "aysnsearch",
-    "searchType": "perio",
+    "searchType": "all",
     "pageSize": 20,
     "page": "",  # 需要在parse_link_list设置
     "searchWord": "",  # 需要在parse_link_list设置
@@ -83,7 +83,7 @@ WANFANG_NEXT = {
     "isHitUnit": "",
     "firstAuthor": "false",
     "rangeParame": "",
-    "navSearchType": "perio"
+    "navSearchType": "all"
 }
 
 WANFANG_ITEM = {

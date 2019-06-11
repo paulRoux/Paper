@@ -16,7 +16,7 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         if "login_user_id" in session:
-            flash("账号已登录", category='ok')
+            flash("账号已登录", category='err')
             return render_template("login.html", form=form)
         data = form.data
         user = User.query.filter_by(name=data['name']).first()

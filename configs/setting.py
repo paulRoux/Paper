@@ -32,7 +32,7 @@ SEARCH_COL = "words"
 DATABASE = {
     "cnki": "Cnki",
     "wanfang": "WanFang",
-    "ixueshu": "XueShu",
+    "xueshu": "XueShu",
     # "cnkiwap": "CnkiWap"
 }
 
@@ -40,7 +40,7 @@ DATABASE = {
 COLLECTION = {
     "cnki": "CnkiItem",
     "wanfang": "WanFangItem",
-    "ixueshu": "XueShuItem",
+    "xueshu": "XueShuItem",
     # "cnkiwap": "CnkiWapItem"
 }
 

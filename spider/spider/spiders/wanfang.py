@@ -17,6 +17,7 @@ class WanfangSpider(CrawlSpider):
         self.base_url = "http://wanfangdata.com.cn/search/searchList.do?"
         self.item_url = "http://www.wanfangdata.com.cn/details/detail.do?"
         self.refer = "http://www.wanfangdata.com.cn/index.html"
+        self.download = "http://www.wanfangdata.com.cn"
         self.name = name
         config = utils.get_config(name)
         self.config = config
@@ -73,8 +74,13 @@ class WanfangSpider(CrawlSpider):
         for item in items:
             doctype = item.xpath(".//div[@class='ResultCheck']/input[@name='selectBox']/@doctype").extract_first()
             docid = item.xpath(".//div[@class='ResultCheck']/input[@name='selectBox']/@docid").extract_first()
+            download = item.xpath(
+                ".//ul[@class='clear']//li[contains(text(), '网络来源:')]/following-sibling::li/a/@onclick"
+            ).extract_first()
             if docid is None or doctype is None:
                 continue
+            if download is None or download == "":
+                download = None
             base_setting.WANFANG_ITEM['_type'] = doctype
             base_setting.WANFANG_ITEM['id'] = docid
             query_string = parse.urlencode(base_setting.WANFANG_ITEM)
@@ -86,7 +92,7 @@ class WanfangSpider(CrawlSpider):
                 url=url,
                 headers={"Referer": self.current_refer},
                 dont_filter=True,
-                meta={"link": url},
+                meta={"link": url, "download": download},
                 callback=self.parse_item
             )
             # break
@@ -95,6 +101,11 @@ class WanfangSpider(CrawlSpider):
         item = WanFangItem()
         weight = 10
         item['search_word'] = self.key_word
+        download = response.meta['download']
+        if download is not None:
+            item['download'] = self.download + download.split("'")[1]
+        else:
+            item['download'] = download
         info = response.xpath("//div[@class='left_con_top']")
         item['title'] = str(info.xpath(".//div[@class='title']/text()").extract_first()).strip()
 
@@ -152,7 +163,7 @@ class WanfangSpider(CrawlSpider):
             weight -= 3
             item['digest'] = None
         else:
-            item['digest'] = "摘要：" + digest.replace("\n", "").replace("\t", "").replace(" ", "")
+            item['digest'] = "摘要" + digest.replace("\n", "").replace("\t", "").replace(" ", "")
 
         item['weight'] = weight
 

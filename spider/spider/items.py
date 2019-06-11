@@ -27,6 +27,7 @@ class CnkiItem(scrapy.Item):
     digest = scrapy.Field()
     link_md5 = scrapy.Field()
     weight = scrapy.Field()
+    download = scrapy.Field()
 
 
 class CnkiWapItem(scrapy.Item):
@@ -42,6 +43,7 @@ class CnkiWapItem(scrapy.Item):
     digest = scrapy.Field()
     link_md5 = scrapy.Field()
     weight = scrapy.Field()
+    download = scrapy.Field()
 
 
 class WanFangItem(scrapy.Item):
@@ -57,6 +59,7 @@ class WanFangItem(scrapy.Item):
     digest = scrapy.Field()
     link_md5 = scrapy.Field()
     weight = scrapy.Field()
+    download = scrapy.Field()
 
 
 class XueShuItem(scrapy.Item):
@@ -72,3 +75,4 @@ class XueShuItem(scrapy.Item):
     digest = scrapy.Field()
     link_md5 = scrapy.Field()
     weight = scrapy.Field()
+    download = scrapy.Field()

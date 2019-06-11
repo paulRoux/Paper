@@ -117,6 +117,7 @@ class CnkiSpider(scrapy.Spider):
         item = CnkiItem()
         weight = 10
         item['search_word'] = self.key_word
+        item['download'] = None
         item['title'] = response.xpath(
             "//div[@id='mainArea']//div[@class='wxTitle']/h2[@class='title']/text()"
         ).extract_first()

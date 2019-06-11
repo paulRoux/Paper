@@ -107,6 +107,7 @@ class SaveSearchWordPipeline(object):
             self.db[table].insert(dict(data))
         else:
             self.db[table].update_one({"keyword": self.search_word}, {'$inc': {"count": 1}})
+            self.db[table].update_one({"keyword": self.search_word}, {'$push': {"source": self.name}})
 
         logging.log(msg="save {} searchWord was finished".format(self.name), level=logging.INFO)
 

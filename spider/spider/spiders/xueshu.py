@@ -8,11 +8,11 @@ from spider.items import XueShuItem
 
 
 # from scrapy_redis.spiders import RedisSpider
-# class CnkiSpider(RedisSpider):
+# class XueShuSpider(RedisSpider):
 
 
 class XueShuSpider(CrawlSpider):
-    name = 'ixueshu'
+    name = 'xueshu'
 
     def __init__(self, name, key_word, max_page, min_page=1, *args, **kwargs):
         self.base_url = "https://s.ixueshu.com/?"
@@ -96,6 +96,7 @@ class XueShuSpider(CrawlSpider):
         item = XueShuItem()
         weight = 10
         item['search_word'] = self.key_word
+        item['download'] = None
         info = response.xpath("//div/h2/following-sibling::div")
         item['title'] = str(response.xpath("//div//h1/text()").extract_first()).strip()
 
@@ -138,7 +139,7 @@ class XueShuSpider(CrawlSpider):
             weight -= 3
             item['digest'] = None
         else:
-            item['digest'] = "摘要：" + digest.replace("\n", "").replace("\t", "").replace(" ", "")
+            item['digest'] = digest.replace("\n", "").replace("\t", "").replace(" ", "")
 
         item['weight'] = weight
 

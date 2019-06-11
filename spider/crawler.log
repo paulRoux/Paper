@@ -1,0 +1,944 @@
+2019-06-10 18:44:59 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:44:59 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:44:59 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:44:59 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:44:59 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 1.2, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'}
+2019-06-10 18:44:59 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'DOWNLOAD_DELAY': 1.7, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'}
+2019-06-10 18:44:59 [scrapy.extensions.telnet] INFO: Telnet Password: f892ab59987baf8f
+2019-06-10 18:44:59 [scrapy.extensions.telnet] INFO: Telnet Password: cb63dbbe2efa2842
+2019-06-10 18:44:59 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:44:59 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.WanfangPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:45:00 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:45:00 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:45:00 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-10 18:45:00 [WanFang] INFO: start request url is http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=
+2019-06-10 18:45:00 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.CnkiPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:45:00 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:45:00 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:45:00 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2019-06-10 18:45:00 [cnki] INFO: start request url is http://kns.cnki.net/kns/request/SearchHandler.ashx?action=&NaviCode=*&txt_1_sel=SU%24%25%3D%7C&txt_1_value1=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&txt_1_special1=%25&PageName=ASP.brief_default_result_aspx&ConfigFile=SCDBINDEX.xml&DbPrefix=SCDB&db_opt=CJFQ%2CCDFD%2CCMFD%2CCPFD%2CIPFD%2CCCND%2CCCJD&his=0&ua=1.11&isinEn=1&parentdb=SCDB&__=Mon+Jun+10+2019+18%3A45%3A00+GMT%2B0800+%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29
+2019-06-10 18:45:00 [cnki] INFO: prepare request http://kns.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&isinEn=1&dbPrefix=SCDB&dbCatalog=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88%E6%80%BB%E5%BA%93&ConfigFile=SCDBINDEX.xml&research=off&t=1560163500&keyValue=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&S=1&sorttype=
+2019-06-10 18:45:01 [cnki] INFO: total page is 5
+2019-06-10 18:45:01 [cnki] INFO: prepare crawl the 1 page!
+2019-06-10 18:45:02 [WanFang] INFO: total page is 44
+2019-06-10 18:45:02 [WanFang] INFO: prepare crawl the 1 page!
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=1&recid=&FileName=RJXB20190409001&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.2560.TP.20190409.1731.001&bsm=
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=2&recid=&FileName=QBLL20190520000&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.1762.G3.20190520.0928.008&bsm=
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=3&recid=&FileName=GDGB201902009&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0104;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=4&recid=&FileName=ZGCI201905016&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=CJFY2019;&URLID=&bsm=Y08;QS0505;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=5&recid=&FileName=CKXX201915057&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=6&recid=&FileName=KJFT201836095&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0104;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=7&recid=&FileName=SORT201806012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=51.1097.g8.20181128.1211.009&bsm=QS0101;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=8&recid=&FileName=HBCR201806025&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFR2018;&URLID=&bsm=QS0104;R07;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=9&recid=&FileName=ZXDB201824020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK07;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=10&recid=&FileName=XXJS201812022&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=11&recid=&FileName=TSGG201812011&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=12.1020.g2.20181220.1342.020&bsm=QK0101;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=12&recid=&FileName=SCXH201824093&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0101;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=13&recid=&FileName=DSJD201812005&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QSS0504;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=14&recid=&FileName=KXGY201901024&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0401;QS0401;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=15&recid=&FileName=YISZ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=16&recid=&FileName=ZGJN201902020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=17&recid=&FileName=KJSZ201901006&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=18&recid=&FileName=LLTT201902015&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFX2019;&URLID=&bsm=QS0401;X01;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=19&recid=&FileName=CJJI201903027&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFU2019;CJFY2019;&URLID=&bsm=QS0503;Y01;U13;
+2019-06-10 18:45:03 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=20&recid=&FileName=GDLJ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=HANS201809210086
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgszyx201901011
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgzy201905007
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjjyglyj201901003
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxaqytxbm201903007
+2019-06-10 18:45:03 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjf201836095
+2019-06-10 18:45:03 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138 was finished
+2019-06-10 18:45:05 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:45:05 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:45:05 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:45:05 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:45:05 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:45:05 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:55:47 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 0.6, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2225.0 Safari/537.36'}
+2019-06-10 18:55:47 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'DOWNLOAD_DELAY': 1.7, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'}
+2019-06-10 18:55:47 [scrapy.extensions.telnet] INFO: Telnet Password: fa231f27b57f7709
+2019-06-10 18:55:47 [scrapy.extensions.telnet] INFO: Telnet Password: 45fb0b6bf9d83a7c
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:55:47 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:55:47 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:55:48 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.CnkiPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:55:48 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:55:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:55:48 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.WanfangPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:55:48 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:55:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-10 18:55:48 [cnki] INFO: start request url is http://kns.cnki.net/kns/request/SearchHandler.ashx?action=&NaviCode=*&txt_1_sel=SU%24%25%3D%7C&txt_1_value1=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&txt_1_special1=%25&PageName=ASP.brief_default_result_aspx&ConfigFile=SCDBINDEX.xml&DbPrefix=SCDB&db_opt=CJFQ%2CCDFD%2CCMFD%2CCPFD%2CIPFD%2CCCND%2CCCJD&his=0&ua=1.11&isinEn=1&parentdb=SCDB&__=Mon+Jun+10+2019+18%3A55%3A48+GMT%2B0800+%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29
+2019-06-10 18:55:48 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:55:48 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2019-06-10 18:55:48 [WanFang] INFO: start request url is http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=
+2019-06-10 18:55:48 [cnki] INFO: prepare request http://kns.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&isinEn=1&dbPrefix=SCDB&dbCatalog=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88%E6%80%BB%E5%BA%93&ConfigFile=SCDBINDEX.xml&research=off&t=1560164148&keyValue=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&S=1&sorttype=
+2019-06-10 18:55:49 [cnki] INFO: total page is 5
+2019-06-10 18:55:49 [cnki] INFO: prepare crawl the 1 page!
+2019-06-10 18:55:49 [WanFang] INFO: total page is 44
+2019-06-10 18:55:49 [WanFang] INFO: prepare crawl the 1 page!
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=1&recid=&FileName=RJXB20190409001&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.2560.TP.20190409.1731.001&bsm=
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=2&recid=&FileName=QBLL20190520000&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.1762.G3.20190520.0928.008&bsm=
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=3&recid=&FileName=GDGB201902009&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0104;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=4&recid=&FileName=ZGCI201905016&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=CJFY2019;&URLID=&bsm=Y08;QS0505;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=5&recid=&FileName=CKXX201915057&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=6&recid=&FileName=KJFT201836095&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0104;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=7&recid=&FileName=SORT201806012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=51.1097.g8.20181128.1211.009&bsm=QS0101;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=8&recid=&FileName=HBCR201806025&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFR2018;&URLID=&bsm=QS0104;R07;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=9&recid=&FileName=ZXDB201824020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK07;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=10&recid=&FileName=XXJS201812022&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=11&recid=&FileName=TSGG201812011&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=12.1020.g2.20181220.1342.020&bsm=QK0101;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=12&recid=&FileName=SCXH201824093&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0101;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=13&recid=&FileName=DSJD201812005&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QSS0504;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=14&recid=&FileName=KXGY201901024&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0401;QS0401;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=15&recid=&FileName=YISZ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=16&recid=&FileName=ZGJN201902020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=17&recid=&FileName=KJSZ201901006&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=18&recid=&FileName=LLTT201902015&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFX2019;&URLID=&bsm=QS0401;X01;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=19&recid=&FileName=CJJI201903027&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFU2019;CJFY2019;&URLID=&bsm=QS0503;Y01;U13;
+2019-06-10 18:55:50 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=20&recid=&FileName=GDLJ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=HANS201809210086
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgszyx201901011
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgzy201905007
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjjyglyj201901003
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxaqytxbm201903007
+2019-06-10 18:55:50 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjf201836095
+2019-06-10 18:55:50 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:55:50 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:55:50 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138 was finished
+2019-06-10 18:55:50 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:55:50 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:55:50 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:55:51 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:58:05 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'DOWNLOAD_DELAY': 1.4, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Safari/537.36'}
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:58:05 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 0.8, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'}
+2019-06-10 18:58:05 [scrapy.extensions.telnet] INFO: Telnet Password: d098cf9fd8fe5dcf
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:58:05 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:58:05 [scrapy.extensions.telnet] INFO: Telnet Password: dab1b646991652fe
+2019-06-10 18:58:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:58:05 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.WanfangPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:58:06 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:58:06 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.CnkiPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:58:06 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:58:06 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:58:06 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:58:06 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-10 18:58:06 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2019-06-10 18:58:06 [WanFang] INFO: start request url is http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=
+2019-06-10 18:58:06 [cnki] INFO: start request url is http://kns.cnki.net/kns/request/SearchHandler.ashx?action=&NaviCode=*&txt_1_sel=SU%24%25%3D%7C&txt_1_value1=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&txt_1_special1=%25&PageName=ASP.brief_default_result_aspx&ConfigFile=SCDBINDEX.xml&DbPrefix=SCDB&db_opt=CJFQ%2CCDFD%2CCMFD%2CCPFD%2CIPFD%2CCCND%2CCCJD&his=0&ua=1.11&isinEn=1&parentdb=SCDB&__=Mon+Jun+10+2019+18%3A58%3A06+GMT%2B0800+%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29
+2019-06-10 18:58:06 [cnki] INFO: prepare request http://kns.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&isinEn=1&dbPrefix=SCDB&dbCatalog=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88%E6%80%BB%E5%BA%93&ConfigFile=SCDBINDEX.xml&research=off&t=1560164286&keyValue=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&S=1&sorttype=
+2019-06-10 18:58:06 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:58:06 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:58:06 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:58:06 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:58:07 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:58:07 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-10 18:58:07 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.web._newclient.ResponseFailed': 1,
+ 'downloader/request_bytes': 491,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'finish_reason': 'shutdown',
+ 'finish_time': datetime.datetime(2019, 6, 10, 10, 58, 7, 17694),
+ 'log_count/INFO': 12,
+ 'log_count/WARNING': 1,
+ 'retry/count': 1,
+ 'retry/reason_count/twisted.web._newclient.ResponseFailed': 1,
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2019, 6, 10, 10, 58, 6, 549942)}
+2019-06-10 18:58:07 [scrapy.core.engine] INFO: Spider closed (shutdown)
+2019-06-10 18:58:07 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:59:10 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 1.8, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 4.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36'}
+2019-06-10 18:59:10 [scrapy.extensions.telnet] INFO: Telnet Password: f8574716cada67fc
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:59:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 18:59:10 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 18:59:10 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 0.5, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (X11; NetBSD) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.116 Safari/537.36'}
+2019-06-10 18:59:10 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'DOWNLOAD_DELAY': 0.6, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.14 (KHTML, like Gecko) Chrome/24.0.1292.0 Safari/537.14'}
+2019-06-10 18:59:10 [scrapy.extensions.telnet] INFO: Telnet Password: c6ab5a8b78d7af24
+2019-06-10 18:59:10 [scrapy.extensions.telnet] INFO: Telnet Password: 18a259f6a69820e3
+2019-06-10 18:59:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:59:10 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.XueShuPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:59:11 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.WanfangPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:59:11 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:59:11 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.CnkiPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 18:59:11 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 18:59:11 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:59:11 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-10 18:59:11 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:59:11 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 18:59:11 [XueShu] INFO: start request url is https://s.ixueshu.com/?q=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&sort=year+desc
+2019-06-10 18:59:11 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025
+2019-06-10 18:59:11 [cnki] INFO: start request url is http://kns.cnki.net/kns/request/SearchHandler.ashx?action=&NaviCode=*&txt_1_sel=SU%24%25%3D%7C&txt_1_value1=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&txt_1_special1=%25&PageName=ASP.brief_default_result_aspx&ConfigFile=SCDBINDEX.xml&DbPrefix=SCDB&db_opt=CJFQ%2CCDFD%2CCMFD%2CCPFD%2CIPFD%2CCCND%2CCCJD&his=0&ua=1.11&isinEn=1&parentdb=SCDB&__=Mon+Jun+10+2019+18%3A59%3A11+GMT%2B0800+%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29
+2019-06-10 18:59:11 [WanFang] INFO: start request url is http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=
+2019-06-10 18:59:12 [cnki] INFO: prepare request http://kns.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&isinEn=1&dbPrefix=SCDB&dbCatalog=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88%E6%80%BB%E5%BA%93&ConfigFile=SCDBINDEX.xml&research=off&t=1560164352&keyValue=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&S=1&sorttype=
+2019-06-10 18:59:12 [XueShu] INFO: total page is 50
+2019-06-10 18:59:12 [XueShu] INFO: prepare crawl the 1 page!
+2019-06-10 18:59:12 [cnki] INFO: total page is 5
+2019-06-10 18:59:12 [cnki] INFO: prepare crawl the 1 page!
+2019-06-10 18:59:13 [WanFang] INFO: total page is 44
+2019-06-10 18:59:13 [WanFang] INFO: prepare crawl the 1 page!
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=1&recid=&FileName=RJXB20190409001&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.2560.TP.20190409.1731.001&bsm=
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=2&recid=&FileName=QBLL20190520000&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.1762.G3.20190520.0928.008&bsm=
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=3&recid=&FileName=GDGB201902009&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0104;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=4&recid=&FileName=ZGCI201905016&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=CJFY2019;&URLID=&bsm=Y08;QS0505;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=5&recid=&FileName=CKXX201915057&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=6&recid=&FileName=KJFT201836095&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0104;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=7&recid=&FileName=SORT201806012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=51.1097.g8.20181128.1211.009&bsm=QS0101;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=8&recid=&FileName=HBCR201806025&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFR2018;&URLID=&bsm=QS0104;R07;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=9&recid=&FileName=ZXDB201824020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK07;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=10&recid=&FileName=XXJS201812022&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=11&recid=&FileName=TSGG201812011&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=12.1020.g2.20181220.1342.020&bsm=QK0101;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=12&recid=&FileName=SCXH201824093&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0101;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=13&recid=&FileName=DSJD201812005&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QSS0504;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=14&recid=&FileName=KXGY201901024&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0401;QS0401;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=15&recid=&FileName=YISZ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=16&recid=&FileName=ZGJN201902020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=17&recid=&FileName=KJSZ201901006&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=18&recid=&FileName=LLTT201902015&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFX2019;&URLID=&bsm=QS0401;X01;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=19&recid=&FileName=CJJI201903027&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFU2019;CJFY2019;&URLID=&bsm=QS0503;Y01;U13;
+2019-06-10 18:59:13 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=20&recid=&FileName=GDLJ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=HANS201809210086
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgszyx201901011
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgzy201905007
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxaqytxbm201903007
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjjyglyj201901003
+2019-06-10 18:59:13 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjf201836095
+2019-06-10 18:59:14 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138 was finished
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932271600bb487977c9a318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322dfc7fe7a2d168346318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c4f0747c9fb50480318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322d4f37b1b738fe7e7318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c49048dffa9539eb318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932246d6866eec4f1bd2318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932234d371402f6f344c318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932283158f32bb90a826318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932247897aad98b57508318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322108c799b0a90d3c5318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93226953402674b36852318947a18e7f9386.html
+2019-06-10 18:59:14 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93229ca1122355900a4c318947a18e7f9386.html
+2019-06-10 18:59:14 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046 was finished
+2019-06-10 18:59:15 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011 was finished
+2019-06-10 18:59:16 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020 was finished
+2019-06-10 18:59:16 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762 was finished
+2019-06-10 18:59:17 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001 was finished
+2019-06-10 18:59:18 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002 was finished
+2019-06-10 18:59:18 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004 was finished
+2019-06-10 18:59:19 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007 was finished
+2019-06-10 18:59:20 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033 was finished
+2019-06-10 18:59:21 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026 was finished
+2019-06-10 18:59:21 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011 was finished
+2019-06-10 18:59:22 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=HANS201809210086 was finished
+2019-06-10 18:59:23 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025 was finished
+2019-06-10 18:59:23 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:59:23 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:59:23 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:59:23 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:59:23 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:59:23 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011 was finished
+2019-06-10 18:59:24 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 18:59:24 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFR&dbname=CJFDLAST2019&filename=HBCR201806025&v=Mjc4MTRxVHJXTTFGckNVUkxPZlllZHZGeUhoVzcvS0xTL0lmTEc0SDluTXFZOUhZWVI4ZVgxTHV4WVM3RGgxVDM=. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-10 18:59:24 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-10 18:59:24 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-10 18:59:24 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 19:00:02 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 0.5, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.93 Safari/537.36'}
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: spider)
+2019-06-10 19:00:02 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'COOKIES_ENABLED': 'True', 'DOWNLOAD_DELAY': 0.5, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/36.0.1944.0 Safari/537.36'}
+2019-06-10 19:00:02 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.7, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.6.2rc1 (heads/3.6:268e1fb, Jun 17 2017, 19:01:44) [MSC v.1900 64 bit (AMD64)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1b  26 Feb 2019), cryptography 2.6.1, Platform Windows-10-10.0.17763-SP0
+2019-06-10 19:00:02 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'spider', 'DOWNLOAD_DELAY': 0.7, 'LOG_FILE': 'crawler.log', 'LOG_LEVEL': 'INFO', 'NEWSPIDER_MODULE': 'spider.spiders', 'SPIDER_MODULES': ['spider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'}
+2019-06-10 19:00:02 [scrapy.extensions.telnet] INFO: Telnet Password: 14ae3cb11a9c2427
+2019-06-10 19:00:02 [scrapy.extensions.telnet] INFO: Telnet Password: 0df7c8d4b80bcb75
+2019-06-10 19:00:02 [scrapy.extensions.telnet] INFO: Telnet Password: 651848f4250ef7fa
+2019-06-10 19:00:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 19:00:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 19:00:02 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'spider.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-10 19:00:03 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 19:00:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.XueShuPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 19:00:03 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-10 19:00:03 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 19:00:03 [cnki] INFO: start request url is http://kns.cnki.net/kns/request/SearchHandler.ashx?action=&NaviCode=*&txt_1_sel=SU%24%25%3D%7C&txt_1_value1=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&txt_1_special1=%25&PageName=ASP.brief_default_result_aspx&ConfigFile=SCDBINDEX.xml&DbPrefix=SCDB&db_opt=CJFQ%2CCDFD%2CCMFD%2CCPFD%2CIPFD%2CCCND%2CCCJD&his=0&ua=1.11&isinEn=1&parentdb=SCDB&__=Mon+Jun+10+2019+19%3A00%3A03+GMT%2B0800+%28%E4%B8%AD%E5%9B%BD%E6%A0%87%E5%87%86%E6%97%B6%E9%97%B4%29
+2019-06-10 19:00:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 19:00:03 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6024
+2019-06-10 19:00:03 [XueShu] INFO: start request url is https://s.ixueshu.com/?q=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&sort=year+desc
+2019-06-10 19:00:03 [scrapy.middleware] INFO: Enabled item pipelines:
+['spider.pipelines.WanfangPipeline',
+ 'spider.pipelines.MongoPipeline',
+ 'spider.pipelines.SaveSearchWordPipeline']
+2019-06-10 19:00:03 [scrapy.core.engine] INFO: Spider opened
+2019-06-10 19:00:03 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-10 19:00:03 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6025
+2019-06-10 19:00:03 [WanFang] INFO: start request url is http://wanfangdata.com.cn/search/searchList.do?searchType=all&showType=detail&pageSize=20&searchWord=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&isTriggerTag=
+2019-06-10 19:00:03 [cnki] INFO: prepare request http://kns.cnki.net/kns/brief/brief.aspx?pagename=ASP.brief_default_result_aspx&isinEn=1&dbPrefix=SCDB&dbCatalog=%E4%B8%AD%E5%9B%BD%E5%AD%A6%E6%9C%AF%E6%96%87%E7%8C%AE%E7%BD%91%E7%BB%9C%E5%87%BA%E7%89%88%E6%80%BB%E5%BA%93&ConfigFile=SCDBINDEX.xml&research=off&t=1560164403&keyValue=%E5%A4%A7%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%8C%BA%E5%9D%97%E9%93%BE&S=1&sorttype=
+2019-06-10 19:00:03 [XueShu] INFO: total page is 50
+2019-06-10 19:00:03 [XueShu] INFO: prepare crawl the 1 page!
+2019-06-10 19:00:04 [cnki] INFO: total page is 5
+2019-06-10 19:00:04 [cnki] INFO: prepare crawl the 1 page!
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932271600bb487977c9a318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322dfc7fe7a2d168346318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c4f0747c9fb50480318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322d4f37b1b738fe7e7318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c49048dffa9539eb318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932246d6866eec4f1bd2318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932234d371402f6f344c318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932283158f32bb90a826318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932247897aad98b57508318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322108c799b0a90d3c5318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93226953402674b36852318947a18e7f9386.html
+2019-06-10 19:00:04 [XueShu] INFO: prepare to crawl: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93229ca1122355900a4c318947a18e7f9386.html
+2019-06-10 19:00:04 [WanFang] INFO: total page is 44
+2019-06-10 19:00:04 [WanFang] INFO: prepare crawl the 1 page!
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=1&recid=&FileName=RJXB20190409001&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.2560.TP.20190409.1731.001&bsm=
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=2&recid=&FileName=QBLL20190520000&DbName=CAPJLAST&DbCode=CJFQ&yx=Y&pr=&URLID=11.1762.G3.20190520.0928.008&bsm=
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=3&recid=&FileName=GDGB201902009&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0104;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=4&recid=&FileName=ZGCI201905016&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=CJFY2019;&URLID=&bsm=Y08;QS0505;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=5&recid=&FileName=CKXX201915057&DbName=CJFDTEMP&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=6&recid=&FileName=KJFT201836095&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0104;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=7&recid=&FileName=SORT201806012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=51.1097.g8.20181128.1211.009&bsm=QS0101;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=8&recid=&FileName=HBCR201806025&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFR2018;&URLID=&bsm=QS0104;R07;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=9&recid=&FileName=ZXDB201824020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK07;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=10&recid=&FileName=XXJS201812022&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=11&recid=&FileName=TSGG201812011&DbName=CJFDLAST2019&DbCode=CJFQ&yx=Y&pr=&URLID=12.1020.g2.20181220.1342.020&bsm=QK0101;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=12&recid=&FileName=SCXH201824093&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS0101;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=13&recid=&FileName=DSJD201812005&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QSS0504;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=14&recid=&FileName=KXGY201901024&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0401;QS0401;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=15&recid=&FileName=YISZ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=16&recid=&FileName=ZGJN201902020&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=17&recid=&FileName=KJSZ201901006&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QS06;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=18&recid=&FileName=LLTT201902015&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFX2019;&URLID=&bsm=QS0401;X01;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=19&recid=&FileName=CJJI201903027&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=CJFU2019;CJFY2019;&URLID=&bsm=QS0503;Y01;U13;
+2019-06-10 19:00:05 [cnki] INFO: prepare to crawl: http://kns.cnki.net/kns/detail/detail.aspx?QueryID=0&CurRec=20&recid=&FileName=GDLJ201901012&DbName=CJFDLAST2019&DbCode=CJFQ&yx=&pr=&URLID=&bsm=QK0203;
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=HANS201809210086
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgszyx201901011
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgzy201905007
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjjyglyj201901003
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxaqytxbm201903007
+2019-06-10 19:00:05 [WanFang] INFO: prepare to crawl: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjf201836095
+2019-06-10 19:00:05 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=szyxsj201903138 was finished
+2019-06-10 19:00:06 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:06 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:06 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgkjxx201816046 was finished
+2019-06-10 19:00:06 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:06 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:07 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cdtyxyxb201806011 was finished
+2019-06-10 19:00:07 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:07 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:08 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgjrdn201902020 was finished
+2019-06-10 19:00:08 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:08 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:09 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=degree&id=Y3520762 was finished
+2019-06-10 19:00:09 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:09 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:10 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgltjj201805001 was finished
+2019-06-10 19:00:10 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:10 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:11 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxxtgc201803002 was finished
+2019-06-10 19:00:11 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:11 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:12 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93229ca1122355900a4c318947a18e7f9386.html was finished
+2019-06-10 19:00:12 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=ycyyzz201703004 was finished
+2019-06-10 19:00:12 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:12 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:12 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:12 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:12 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=glxdh201803007 was finished
+2019-06-10 19:00:12 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:12 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:13 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b93226953402674b36852318947a18e7f9386.html was finished
+2019-06-10 19:00:13 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:13 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:13 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgxxaq201712033 was finished
+2019-06-10 19:00:13 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:13 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:13 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322108c799b0a90d3c5318947a18e7f9386.html was finished
+2019-06-10 19:00:13 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:13 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:14 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=cjj201907026 was finished
+2019-06-10 19:00:14 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:14 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:14 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932247897aad98b57508318947a18e7f9386.html was finished
+2019-06-10 19:00:14 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:14 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:15 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xdqb201904011 was finished
+2019-06-10 19:00:15 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:15 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:15 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932283158f32bb90a826318947a18e7f9386.html was finished
+2019-06-10 19:00:15 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:15 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:15 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932234d371402f6f344c318947a18e7f9386.html was finished
+Fplckc0SDluTXFZOUVab1I4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHZGeURrVXI3Tk4= was finished
+2019-06-10 19:00:16 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:16 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:16 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:16 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:16 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932246d6866eec4f1bd2318947a18e7f9386.html was finished
+2019-06-10 19:00:16 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:16 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:16 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:16 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:16 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=KJFT201836095&v=MDE2ODFpZk5lckc0SDluUHFZOU1ZWVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHZGeURrVXI3TUw= was finished
+2019-06-10 19:00:16 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:16 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:16 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=jsjjyglyj201901003 was finished
+2019-06-10 19:00:16 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:16 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:16 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c49048dffa9539eb318947a18e7f9386.html was finished
+2019-06-10 19:00:16 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:16 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:17 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=tsggzyyj201812011 was finished
+2019-06-10 19:00:17 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:17 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:17 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDTEMP&filename=CKXX201915057&v=MTUwMTFOcW85QVk0UjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE9mWWVkdkZ5RGtVcjdQSmliVGRyRzRIOWo= was finished
+2019-06-10 19:00:17 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:17 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:17 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322d4f37b1b738fe7e7318947a18e7f9386.html was finished
+2019-06-10 19:00:17 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:17 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:17 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFY&dbname=CJFDTEMP&filename=ZGCI201905016&v=MTI5ODR1eFlTN0RoMVQzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1VyN1BQeXJJWjdHNEg5ak1xbzlFWW9SOGVYMUw= was finished
+2019-06-10 19:00:17 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:17 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:18 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgzy201905007 was finished
+2019-06-10 19:00:18 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:18 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:18 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDTEMP&filename=GDGB201902009&v=MTYxMzdyN09JaW5NYkxHNEg5ak1yWTlGYllSOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1U= was finished
+2019-06-10 19:00:18 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:18 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:18 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322c4f0747c9fb50480318947a18e7f9386.html was finished
+2019-06-10 19:00:18 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:18 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:18 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjf201836095 was finished
+2019-06-10 19:00:18 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:18 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:19 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b9322dfc7fe7a2d168346318947a18e7f9386.html was finished
+2019-06-10 19:00:19 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:19 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:19 [XueShu] INFO: https://www.ixueshu.com/api/search/info/b6a0a2e89f6b932271600bb487977c9a318947a18e7f9386.html was finished
+2019-06-10 19:00:19 [root] INFO: save to database of XueShuItem was finished
+2019-06-10 19:00:19 [root] INFO: save XueShuItem searchWord was finished
+2019-06-10 19:00:19 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-10 19:00:19 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 12026,
+ 'downloader/request_count': 26,
+ 'downloader/request_method_count/GET': 26,
+ 'downloader/response_bytes': 237715,
+ 'downloader/response_count': 26,
+ 'downloader/response_status_count/200': 14,
+ 'downloader/response_status_count/303': 12,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 10, 11, 0, 19, 380564),
+ 'item_scraped_count': 12,
+ 'log_count/INFO': 60,
+ 'request_depth_max': 2,
+ 'response_received_count': 14,
+ 'scheduler/dequeued': 26,
+ 'scheduler/dequeued/memory': 26,
+ 'scheduler/enqueued': 26,
+ 'scheduler/enqueued/memory': 26,
+ 'start_time': datetime.datetime(2019, 6, 10, 11, 0, 3, 264567)}
+2019-06-10 19:00:19 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-10 19:00:19 [cnki] INFO: http://kns.cnki.net/KCMS/detail/11.2560.TP.20190409.1731.001.html was finished
+2019-06-10 19:00:19 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:19 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=xxaqytxbm201903007 was finished
+2019-06-10 19:00:19 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:19 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:19 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:20 [cnki] INFO: http://kns.cnki.net/KCMS/detail/11.1762.G3.20190520.0928.008.html was finished
+2019-06-10 19:00:20 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:20 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:20 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=kjglyj201905025 was finished
+2019-06-10 19:00:20 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:20 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:20 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=GDLJ201901012&v=MDIxOTExVDNxVHJXTTFGckNVUkxPZlllZHZGeURrVXI3QUlpbkhaTEc0SDlqTXJvOUVab1I4ZVgxTHV4WVM3RGg= was finished
+2019-06-10 19:00:20 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:20 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:20 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFU&dbname=CJFDLAST2019&filename=CJJI201903027&v=MjMxODdTN0RoMVQzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1VyL0pKaWZCWjdHNEg5ak1ySTlIWTRSOGVYMUx1eFk= was finished
+2019-06-10 19:00:20 [scrapy.core.scraper] ERROR: Error processing {'author': None,
+ 'digest': None,
+ 'doi': None,
+ 'download': None,
+ 'keyword': None,
+ 'link': 'http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFU&dbname=CJFDLAST2019&filename=CJJI201903027&v=MjMxODdTN0RoMVQzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1VyL0pKaWZCWjdHNEg5ak1ySTlIWTRSOGVYMUx1eFk=',
+ 'link_md5': '1cba4b488c82d71b986aaf3c45fa75f8',
+ 'search_word': '大数据与区块链',
+ 'source': None,
+ 'time': '2019-03-01',
+ 'title': None,
+ 'type': '期刊',
+ 'weight': 0}
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\Code\Python\others\Paper\spider\spider\pipelines.py", line 21, in process_item
+    if len(item['title']) == "" or item['keyword'] == 0 and len(item['author']) == 0:
+TypeError: object of type 'NoneType' has no len()
+2019-06-10 19:00:21 [WanFang] INFO: http://www.wanfangdata.com.cn/details/detail.do?_type=perio&id=zgszyx201901011 was finished
+2019-06-10 19:00:21 [root] INFO: save to database of WanFangItem was finished
+2019-06-10 19:00:21 [root] INFO: save WanFangItem searchWord was finished
+2019-06-10 19:00:21 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-10 19:00:21 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 14066,
+ 'downloader/request_count': 22,
+ 'downloader/request_method_count/GET': 22,
+ 'downloader/response_bytes': 630976,
+ 'downloader/response_count': 22,
+ 'downloader/response_status_count/200': 22,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 10, 11, 0, 21, 210685),
+ 'item_scraped_count': 20,
+ 'log_count/INFO': 92,
+ 'request_depth_max': 2,
+ 'response_received_count': 22,
+ 'scheduler/dequeued': 22,
+ 'scheduler/dequeued/memory': 22,
+ 'scheduler/enqueued': 22,
+ 'scheduler/enqueued/memory': 22,
+ 'start_time': datetime.datetime(2019, 6, 10, 11, 0, 3, 300471)}
+2019-06-10 19:00:21 [scrapy.core.engine] INFO: Spider closed (finished)
+2019-06-10 19:00:21 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFX&dbname=CJFDLAST2019&filename=LLTT201902015&v=MDI0NDdmWWVkdkZ5RGtVci9KS1NIZmVyRzRIOWpNclk5RVlZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE8= was finished
+2019-06-10 19:00:21 [scrapy.core.scraper] ERROR: Error processing {'author': None,
+ 'digest': None,
+ 'doi': None,
+ 'download': None,
+ 'keyword': None,
+ 'link': 'http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFX&dbname=CJFDLAST2019&filename=LLTT201902015&v=MDI0NDdmWWVkdkZ5RGtVci9KS1NIZmVyRzRIOWpNclk5RVlZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE8=',
+ 'link_md5': 'b90973c4f82f27c19477d4b3ab1b77d3',
+ 'search_word': '大数据与区块链',
+ 'source': None,
+ 'time': '2019-03-15',
+ 'title': None,
+ 'type': '期刊',
+ 'weight': 0}
+Traceback (most recent call last):
+  File "C:\Users\dell\AppData\Local\Programs\Python\Python36\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "E:\Code\Python\others\Paper\spider\spider\pipelines.py", line 21, in process_item
+    if len(item['title']) == "" or item['keyword'] == 0 and len(item['author']) == 0:
+TypeError: object of type 'NoneType' has no len()
+2019-06-10 19:00:21 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=KJSZ201901006&v=MDI0NDdmWWVkdkZ5RGtVci9JTGlmWWRMRzRIOWpNcm85RllvUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE8= was finished
+2019-06-10 19:00:21 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:21 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:22 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=ZGJN201902020&v=MTg5NTgvTFB5ckJZTEc0SDlqTXJZOUhaSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHZGeURrVXI= was finished
+2019-06-10 19:00:22 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:22 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:22 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=YISZ201901012&v=MDQ3NDNZZExHNEg5ak1ybzlFWm9SOGVYMUx1eFlTN0RoMVQzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1VyL0xQQ1Q= was finished
+2019-06-10 19:00:22 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:22 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:23 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=KXGY201901024&v=MTg5NTgvS0xqWE1kN0c0SDlqTXJvOUhZSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHZGeURrVXI= was finished
+2019-06-10 19:00:23 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:23 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:23 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=DSJD201812005&v=MDI0NDdmWWVkdkZ5RGtVci9LSVQ3QmFyRzRIOW5Oclk5RllZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE8= was finished
+2019-06-10 19:00:23 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:23 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:24 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=SCXH201824093&v=MDI5NTc0UjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE9mWWVkdkZ5RGtVci9OTmk3VFpyRzRIOW5PcTQ5TVo= was finished
+2019-06-10 19:00:24 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:24 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:27 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=TSGG201812011&v=MjAyMzQ5RVpZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1VSTE9mWWVkdkZ5RGtVcnpOTVQ3TWFiRzRIOW5Oclk= was finished
+2019-06-10 19:00:27 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:27 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:27 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=XXJS201812022&v=MDg3OThNMUZyQ1VSTE9mWWVkdkZ5RGtVcnpNUFRYQmZiRzRIOW5Oclk5SFpvUjhlWDFMdXhZUzdEaDFUM3FUclc= was finished
+2019-06-10 19:00:27 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:27 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:28 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFQ&dbname=CJFDLAST2019&filename=ZXDB201824020&v=MDQyMzMzcVRyV00xRnJDVVJMT2ZZZWR2RnlEa1Vyek1QelhQYkxHNEg5bk9xNDlIWklSOGVYMUx1eFlTN0RoMVQ= was finished
+2019-06-10 19:00:28 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:28 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:28 [cnki] INFO: http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CJFR&dbname=CJFDLAST2019&filename=HBCR201806025&v=MjA3NDRSTE9mWWVkdkZ5RGtVcnpQTFMvSWZMRzRIOW5NcVk5SFlZUjhlWDFMdXhZUzdEaDFUM3FUcldNMUZyQ1U= was finished
+2019-06-10 19:00:28 [root] INFO: save to database of CnkiItem was finished
+2019-06-10 19:00:28 [root] INFO: save CnkiItem searchWord was finished
+2019-06-10 19:00:28 [scrapy.core.engine] INFO: Closing spider (finished)
+2019-06-10 19:00:28 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 34450,
+ 'downloader/request_count': 43,
+ 'downloader/request_method_count/GET': 43,
+ 'downloader/response_bytes': 684224,
+ 'downloader/response_count': 43,
+ 'downloader/response_status_count/200': 23,
+ 'downloader/response_status_count/302': 20,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2019, 6, 10, 11, 0, 28, 981614),
+ 'item_scraped_count': 18,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 89,
+ 'request_depth_max': 3,
+ 'response_received_count': 23,
+ 'scheduler/dequeued': 43,
+ 'scheduler/dequeued/memory': 43,
+ 'scheduler/enqueued': 43,
+ 'scheduler/enqueued/memory': 43,
+ 'start_time': datetime.datetime(2019, 6, 10, 11, 0, 3, 251601)}
+2019-06-10 19:00:28 [scrapy.core.engine] INFO: Spider closed (finished)

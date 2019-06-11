@@ -79,7 +79,7 @@
                 <div class="content">
                     <a class="header" href="{{ res.link }}">{{ res.title }}</a>
                     <div class="description">
-                        {% if res.author|length %}
+                        {% if res.author %}
                         <p style="color: #33CC66">
                             <strong>作者：</strong>{{ res.author }}
                         </p>
@@ -111,9 +111,13 @@
                             <strong>类型：</strong>
                             <label class="ui label">{{res.type}}</label>
                         </p>
+                        {% if res.download %}
                         <div class="ui right floated button" style="width: 50px">
-                            <i class="icon download"></i>
+                            <a href="{{ res.download }}">
+                                <i class="icon download"></i>
+                            </a>
                         </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>

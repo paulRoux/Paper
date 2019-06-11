@@ -108,7 +108,7 @@ class CnkiWapSpider(scrapy.Spider):
         item = CnkiWapItem()
         weight = 10
         item['search_word'] = self.key_word
-
+        item['download'] = None
         item['title'] = str(response.xpath(
             "//div[@class='c-card__title2']/text()"
         ).extract_first()).strip()
