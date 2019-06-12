@@ -13,7 +13,7 @@
     <span class="ctr-p" id="body">
         <div class="ui image" style="height:233px;margin-top:89px" id="logo">
             <a href="{{ buildUrlPath('index_page.index') }}">
-                <img src="{{ buildStaticUrl('/images/googlelogo_color_272x92dp.png') }}" alt="" style="padding-top:109px">
+                <img src="{{ buildStaticUrl('/images/logo.png') }}" alt="" style="padding-top:109px">
             </a>
         </div>
     </span>
@@ -69,7 +69,7 @@
             {% endfor %}
         </div>
         <div style="height: 15px"></div>
-        <div class="ui inline container">
+        <div class="ui inline container" style="padding-left: 50px">
             {{ form.submit }}
             <a href="{{ buildUrlPath('user_page.login') }}">
                 <button type="button" class="ui circular blue basic button">登陆</button>

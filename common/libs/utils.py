@@ -57,16 +57,20 @@ def check_login_status(session):
             userlog.search_word = session['keyword']
             db.session.add(userlog)
             db.session.commit()
-        else:
+        elif not session['quit']:
             flash("登录失效,请重新登陆", category='err')
             session.pop('login_user', None)
             session.pop('login_user_id', None)
-            return redirect(UrlManager.build_url_path("user_page.login"))
-    else:
-        flash("登录失效,请重新登陆", category='err')
-        if "login_user" in session:
-            session.pop('login_user', None)
-        return redirect(UrlManager.build_url_path("user_page.login"))
+            return False
+        else:
+            return True
+    # else:
+    #     flash("登录失效,请重新登陆", category='err')
+    #     if "login_user" in session:
+    #         session.pop('login_user', None)
+    #     print(session)
+    #     return False
+    return True
 
 
 def change_filename(filename):

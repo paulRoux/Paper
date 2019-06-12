@@ -26,6 +26,7 @@ def login():
                 return redirect(UrlManager.build_url_path("user_page.login"))
             session['login_user'] = user.name
             session['login_user_id'] = user.id
+            session['quit'] = False
             userlog = UserLog.query.filter_by(user_id=user.id).first()
             if userlog:
                 userlog.ip = request.remote_addr
@@ -70,6 +71,7 @@ def register():
 def logout():
     session.pop('login_user', None)
     session.pop('login_user_id', None)
+    session['quit'] = True
     flash('退出登陆成功', category='ok')
     return redirect(UrlManager.build_url_path("user_page.login"))
 

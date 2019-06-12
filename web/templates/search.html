@@ -85,9 +85,11 @@
                         </p>
                         {% endif %}
                         <div style="height: 8px"></div>
+                        {% if res.digest %}
                         <p>
                             &emsp;&emsp;{{ res.digest }}
                         </p>
+                        {% endif %}
                         <div style="height: 8px"></div>
                         {% if res.keyword %}
                         <p style="color: blue">
@@ -99,12 +101,16 @@
                             <strong>doi:</strong> {{ res.doi }}
                         </p>
                         {% endif %}
+                        {% if res.source %}
                         <p style="color: orange">
                             <strong>来源：</strong> {{ res.source }}
                         </p>
+                        {% endif %}
+                        {% if res.time %}
                         <p style="color: #FF0033">
                             <strong>日期：</strong> {{ res.time }}
                         </p>
+                        {% endif %}
                     </div>
                     <div class="extra">
                         <p style="color: #66CCFF">
@@ -129,7 +135,10 @@
 
     {% if not data.is_login %}
     <div style="margin-top: 5px"></div>
-    <label class="ui large label" style="color: red">登陆获取更多内容!</label>
+    <label class="ui large label" style="color: red">
+        <a href="{{ buildUrlPath('user_page.login') }}">登陆</a>
+        获取更多内容!
+    </label>
     <div style="margin-top: 8px"></div>
     {% endif %}
 

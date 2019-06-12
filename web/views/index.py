@@ -25,7 +25,8 @@ def index():
         data['keyword'] = session['keyword']
 
         if session['keyword'] is not None and session['keyword'] != "":
-            check_login_status(session)
+            if not check_login_status(session):
+                return redirect(UrlManager.build_url_path("user_page.login"))
             session['show'] = True
             url = UrlManager.build_url_path("index_page.search") + "?search_word=" + data['keyword']
             data['url'] = APPLICATION['domain'] + url
@@ -62,7 +63,8 @@ def search():
         return redirect(UrlManager.build_url_path("index_page.find"))
 
     session['keyword'] = keyword
-    check_login_status(session)
+    if not check_login_status(session):
+        return redirect(UrlManager.build_url_path("user_page.login"))
     url = APPLICATION['domain'] + "/search?search_word=" + keyword
     data = {
         "keyword": keyword,
@@ -100,6 +102,7 @@ def search():
     word = []
     words = collection.find()
     for value in words:
+        jump = False
         for s in seg_list:
             if s == value['keyword'] or value['keyword'] in s:
                 if s not in word:
@@ -107,6 +110,11 @@ def search():
             elif s in value['keyword']:
                 if value['keyword'] not in word:
                     word.append(value['keyword'])
+                    jump = True
+                    break
+        if jump:
+            break
+
 
     # word = ""
     # words = collection.find_one({'keyword': {"$in": seg_list}})
@@ -156,18 +164,8 @@ def search():
             for val in COLLECTION.values():
                 if val == value + "Item":
                     collection = db[val]
-                    if len(word) > 1:
-                        for key in word[:3]:
-                            res = collection.find({"search_word": key}).sort(
-                                [('weight', pymongo.DESCENDING), ('_id', pymongo.DESCENDING)]
-                            ).limit(page_size).skip(
-                                page_size * page
-                            )
-                            if res is not None or res != "":
-                                res_list.append(res)
-                                number += res.count()
-                    else:
-                        res = collection.find({"search_word": data['keyword']}).sort(
+                    for key in word[:3]:
+                        res = collection.find({"search_word": key}).sort(
                             [('weight', pymongo.DESCENDING), ('_id', pymongo.DESCENDING)]
                         ).limit(page_size).skip(
                             page_size * page
@@ -185,7 +183,7 @@ def search():
                         return redirect(UrlManager.build_url_path("index_page.find"))
                 else:
                     continue
-        total = int((math.ceil(number / page_size) / len(DATABASE)) / len(word))  # 总页数
+        total = int((math.ceil(number / page_size) / len(DATABASE)) / len(word)) + 1  # 总页数
         if "login_user_id" in session:
             data['total'] = total
             data['is_login'] = True

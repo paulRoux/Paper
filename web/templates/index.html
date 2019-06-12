@@ -36,7 +36,7 @@
     <span class="ctr-p" id="body">
         <div class="ui image" style="height:233px;margin-top:89px" id="logo">
             <a href="{{ buildUrlPath('index_page.index') }}">
-                <img src="{{ buildStaticUrl('/images/googlelogo_color_272x92dp.png') }}" alt=""
+                <img src="{{ buildStaticUrl('/images/logo.png') }}" alt=""
                      style="padding-top:109px">
             </a>
         </div>
@@ -45,7 +45,7 @@
 
     <form action="{{ data.url }}" class="ui form" method="post">
         <div class="field">
-            <div class="ui icon input focus" style="width: 560px">
+            <div class="ui icon input focus" style="width: 460px">
                 {{ form.keyword }}
 <!--                <input type="text" name="keyword" style="border-radius: 30px; width: 260px; height: 45px">-->
                 <i class="circular search link icon" style="margin-top: 4px"></i>
@@ -64,7 +64,7 @@
         <div class="ui inline container">
             {{ form.submit }}
             <a href="http://roux.top">
-                <button type="button" class="ui circular teal basic button">开心一下</button>
+                <button type="button" class="ui circular teal basic compact button">开心一下</button>
             </a>
         </div>
 

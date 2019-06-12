@@ -15,7 +15,7 @@ class IndexForm(FlaskForm):
     submit = SubmitField(
         label="搜索一下",
         render_kw={
-            "class": "ui circular teal basic button",
+            "class": "ui circular teal basic compact button",
         }
     )
 
